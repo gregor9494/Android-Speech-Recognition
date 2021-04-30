@@ -47,6 +47,12 @@ public class SpeechRecognition {
         this.context = context;
         initializeSpeechRecognitionParameters();
     }
+    
+      public SpeechRecognition(Context context,boolean enableOnlyOfflineRecognition){
+        this.enableOnlyOfflineRecognition = enableOnlyOfflineRecognition;
+        this.context = context;
+        initializeSpeechRecognitionParameters();
+    }
 
     /**
      * Sets the application context instance requesting SpeechRecognition
