@@ -240,17 +240,18 @@ public class SpeechRecognition {
         recognizerIntent.putExtra(RecognizerIntent.EXTRA_CALLING_PACKAGE, context.getPackageName());
         recognizerIntent.putExtra(RecognizerIntent.EXTRA_MAX_RESULTS, MAX_RESULT_COUNT);
         recognizerIntent.putExtra(RecognizerIntent.EXTRA_PARTIAL_RESULTS, true);
-        String languagePref = "en-US";//as you have downloaded US english model
-        intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE, languagePref);
-        intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE_PREFERENCE, languagePref); 
-        intent.putExtra(RecognizerIntent.EXTRA_ONLY_RETURN_LANGUAGE_PREFERENCE, languagePref);
 
         /*
          * Only offline recognition works from API level 23
          */
         if(enableOnlyOfflineRecognition){
-            if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.M)
+            if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.M){
                 recognizerIntent.putExtra(RecognizerIntent.EXTRA_PREFER_OFFLINE, true);
+                String languagePref = "en-US";//as you have downloaded US english model
+                intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE, languagePref);
+                intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE_PREFERENCE, languagePref); 
+                intent.putExtra(RecognizerIntent.EXTRA_ONLY_RETURN_LANGUAGE_PREFERENCE, languagePref);
+            }
         }
 
         //TODO: Set preferred Speech recognition Language
