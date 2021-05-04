@@ -248,9 +248,9 @@ public class SpeechRecognition {
             if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.M){
                 recognizerIntent.putExtra(RecognizerIntent.EXTRA_PREFER_OFFLINE, true);
                 String languagePref = "en-US";//as you have downloaded US english model
-                intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE, languagePref);
-                intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE_PREFERENCE, languagePref); 
-                intent.putExtra(RecognizerIntent.EXTRA_ONLY_RETURN_LANGUAGE_PREFERENCE, languagePref);
+                recognizerIntent.putExtra(RecognizerIntent.EXTRA_LANGUAGE, languagePref);
+                recognizerIntent.putExtra(RecognizerIntent.EXTRA_LANGUAGE_PREFERENCE, languagePref); 
+                recognizerIntent.putExtra(RecognizerIntent.EXTRA_ONLY_RETURN_LANGUAGE_PREFERENCE, languagePref);
             }
         }
 
